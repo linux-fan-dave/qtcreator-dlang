@@ -3,6 +3,6 @@ TEMPLATE = subdirs
 CONFIG+=ordered
 
 
-SUBDIRS += \
+SUBDIRS += dub_cpp\
     dubproject
 

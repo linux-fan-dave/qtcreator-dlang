@@ -43,3 +43,6 @@ QTC_PLUGIN_RECOMMENDS += \
 ###### End _dependencies.pri contents ######
 
 include($$QTCREATOR_SOURCES/src/qtcreatorplugin.pri)
+
+LIBS += -L$$PWD/../dub_cpp/ -ldub_cpp -lphobos2
+PRE_TARGETDEPS += $$PWD/../dub_cpp/libdub_cpp.a

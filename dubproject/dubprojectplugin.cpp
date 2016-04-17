@@ -17,8 +17,24 @@
 
 using namespace DubProject::Internal;
 
+class B {
+public:
+   virtual int count();
+};
+
+B* CreateB();
+
+extern "C" int rt_init();
+
 DubProjectPlugin::DubProjectPlugin()
 {
+    rt_init();
+    B* b = CreateB();
+    int i = b->count();
+    QMessageBox msgBox;
+    msgBox.setText(QString("D returned %1").arg(i));
+    msgBox.exec();
+
     // Create your members
 }
 

@@ -1,0 +1,16 @@
+{
+    "name": "dub_cpp",
+    "description": "a wrapper for dub to be used from c++",
+    "copyright": "Copyright © 2016, feurleda",
+    "authors": ["feurleda"],
+    "dependencies": {
+        "dub": "0.9.24"
+    },
+    "configurations": [
+        {
+            "name": "library",
+            "target": "library",
+            "dflags-dmd": ["-fPIC"]
+        }
+    ]
+}
