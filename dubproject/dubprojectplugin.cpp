@@ -14,6 +14,7 @@
 #include <QMenu>
 
 #include <QtPlugin>
+#include "d_initializer.h"
 
 using namespace DubProject::Internal;
 
@@ -24,11 +25,10 @@ public:
 
 B* CreateB();
 
-extern "C" int rt_init();
-
 DubProjectPlugin::DubProjectPlugin()
 {
-    rt_init();
+    static D_Initializer init;
+
     B* b = CreateB();
     int i = b->count();
     QMessageBox msgBox;
