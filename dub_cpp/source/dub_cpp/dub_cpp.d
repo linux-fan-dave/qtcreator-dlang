@@ -1,10 +1,10 @@
 import core.memory;
 
 extern (C++) interface B {
-    public:
+public:
     extern (C++) int count();
 
-    private:
+private:
 }
 
 class D : B {
