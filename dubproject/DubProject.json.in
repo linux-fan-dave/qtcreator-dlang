@@ -1,0 +1,11 @@
+{
+    \"Name\" : \"DubProject\",
+    \"Version\" : \"0.0.1\",
+    \"CompatVersion\" : \"0.0.1\",
+    \"Vendor\" : \"sodgeIT\",
+    \"Copyright\" : \"(C) sodgeIT\",
+    \"License\" : \"BSD\",
+    \"Description\" : \"Opens a dub project file in qtcreator\",
+    \"Url\" : \"http://www.sodgeit.de\",
+    $$dependencyList
+}
