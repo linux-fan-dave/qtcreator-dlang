@@ -47,4 +47,5 @@ QTC_PLUGIN_RECOMMENDS += \
 include($$QTCREATOR_SOURCES/src/qtcreatorplugin.pri)
 
 LIBS += -L$$PWD/../dub_cpp/ -ldub_cpp -lphobos2
+LIBS += -L$(HOME)/.dub/packages/dub-0.9.24/bin/ -ldub
 PRE_TARGETDEPS += $$PWD/../dub_cpp/libdub_cpp.a

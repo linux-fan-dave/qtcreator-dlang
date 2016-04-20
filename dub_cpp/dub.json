@@ -4,13 +4,24 @@
     "copyright": "Copyright © 2016, feurleda",
     "authors": ["feurleda"],
     "dependencies": {
-        "dub": "0.9.24"
+        "dub":  "0.9.24"
+    },
+    "subConfigurations": {
+        "dub": "library-nonet"
     },
     "configurations": [
         {
             "name": "library",
-            "target": "library",
-            "dflags-dmd": ["-fPIC"]
+            "targetType": "library"
+        },
+        {
+            "name": "dynLib",
+            "targetType": "dynamicLibrary"
+        },
+        {
+            "name": "app",
+            "targetType": "executable"
         }
+
     ]
 }

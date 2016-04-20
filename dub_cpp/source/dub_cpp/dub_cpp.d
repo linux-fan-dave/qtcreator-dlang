@@ -1,4 +1,5 @@
 import core.memory;
+import dub.dub;
 
 extern (C++) interface B {
 public:
