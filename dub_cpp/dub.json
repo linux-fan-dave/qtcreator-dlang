@@ -4,7 +4,10 @@
     "copyright": "Copyright © 2016, feurleda",
     "authors": ["feurleda"],
     "dependencies": {
-        "dub": "0.9.24"
+        "dub": "~master"
+    },
+    "subConfigurations": {
+        "dub": "dynamic-library-nonet"
     },
     "configurations": [
         {
