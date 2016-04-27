@@ -49,3 +49,6 @@ include($$QTCREATOR_SOURCES/src/qtcreatorplugin.pri)
 LIBS += -L$$PWD/../dub_cpp/ -ldub_cpp -lphobos2
 LIBS += -L$$(HOME)/.dub/packages/dub-master/bin -ldub
 PRE_TARGETDEPS += $$PWD/../dub_cpp/libdub_cpp.a
+
+RESOURCES += \
+    dubproject.qrc

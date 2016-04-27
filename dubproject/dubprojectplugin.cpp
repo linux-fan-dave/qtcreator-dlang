@@ -8,10 +8,13 @@
 #include <coreplugin/actionmanager/actioncontainer.h>
 #include <coreplugin/coreconstants.h>
 
+#include <utils/mimetypes/mimedatabase.h>
+
 #include <QAction>
 #include <QMessageBox>
 #include <QMainWindow>
 #include <QMenu>
+
 
 #include <QtPlugin>
 #include "d_initializer.h"
@@ -56,16 +59,19 @@ bool DubProjectPlugin::initialize(const QStringList &arguments, QString *errorSt
     Q_UNUSED(arguments)
     Q_UNUSED(errorString)
 
-    QAction *action = new QAction(tr("DubProject action"), this);
-    Core::Command *cmd = Core::ActionManager::registerAction(action, Constants::ACTION_ID,
-                                                             Core::Context(Core::Constants::C_GLOBAL));
-    cmd->setDefaultKeySequence(QKeySequence(tr("Ctrl+Alt+Meta+A")));
-    connect(action, SIGNAL(triggered()), this, SLOT(triggerAction()));
+    Utils::MimeDatabase::addMimeTypes("Dubproject.mimetypes.xml");
 
-    Core::ActionContainer *menu = Core::ActionManager::createMenu(Constants::MENU_ID);
-    menu->menu()->setTitle(tr("DubProject"));
-    menu->addAction(cmd);
-    Core::ActionManager::actionContainer(Core::Constants::M_TOOLS)->addMenu(menu);
+
+//    QAction *action = new QAction(tr("DubProject action"), this);
+//    Core::Command *cmd = Core::ActionManager::registerAction(action, Constants::ACTION_ID,
+//                                                             Core::Context(Core::Constants::C_GLOBAL));
+//    cmd->setDefaultKeySequence(QKeySequence(tr("Ctrl+Alt+Meta+A")));
+//    connect(action, SIGNAL(triggered()), this, SLOT(triggerAction()));
+
+//    Core::ActionContainer *menu = Core::ActionManager::createMenu(Constants::MENU_ID);
+//    menu->menu()->setTitle(tr("DubProject"));
+//    menu->addAction(cmd);
+//    Core::ActionManager::actionContainer(Core::Constants::M_TOOLS)->addMenu(menu);
 
     return true;
 }
@@ -85,9 +91,9 @@ ExtensionSystem::IPlugin::ShutdownFlag DubProjectPlugin::aboutToShutdown()
     return SynchronousShutdown;
 }
 
-void DubProjectPlugin::triggerAction()
-{
-    QMessageBox::information(Core::ICore::mainWindow(),
-                             tr("Action triggered"),
-                             tr("This is an action from DubProject."));
-}
+//void DubProjectPlugin::triggerAction()
+//{
+//    QMessageBox::information(Core::ICore::mainWindow(),
+//                             tr("Action triggered"),
+//                             tr("This is an action from DubProject."));
+//}

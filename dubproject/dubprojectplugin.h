@@ -4,6 +4,7 @@
 #include "dubproject_global.h"
 
 #include <extensionsystem/iplugin.h>
+#include <projectexplorer/iprojectmanager.h>
 
 namespace DubProject {
 namespace Internal {
@@ -22,7 +23,7 @@ public:
     ShutdownFlag aboutToShutdown();
 
 private slots:
-    void triggerAction();
+//    void triggerAction();
 };
 
 } // namespace Internal
