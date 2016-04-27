@@ -19,6 +19,8 @@
 #include <QtPlugin>
 #include "d_initializer.h"
 
+#include "dubprojectmanager.h"
+
 using namespace DubProject::Internal;
 
 class B {
@@ -59,7 +61,9 @@ bool DubProjectPlugin::initialize(const QStringList &arguments, QString *errorSt
     Q_UNUSED(arguments)
     Q_UNUSED(errorString)
 
-    Utils::MimeDatabase::addMimeTypes("Dubproject.mimetypes.xml");
+    Utils::MimeDatabase::addMimeTypes(":DubProject.mimetypes.xml");
+    addAutoReleasedObject(new DubProjectManager);
+
 
 
 //    QAction *action = new QAction(tr("DubProject action"), this);

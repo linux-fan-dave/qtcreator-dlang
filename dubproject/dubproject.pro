@@ -3,12 +3,14 @@ DEFINES += DUBPROJECT_LIBRARY
 # DubProject files
 
 SOURCES += dubprojectplugin.cpp \
-    d_initializer.cpp
+    d_initializer.cpp \
+    dubprojectmanager.cpp
 
 HEADERS += dubprojectplugin.h \
         dubproject_global.h \
         dubprojectconstants.h \
-    d_initializer.h
+    d_initializer.h \
+    dubprojectmanager.h
 
 # Qt Creator linking
 
@@ -37,7 +39,8 @@ QTC_LIB_DEPENDS += \
     # nothing here at this time
 
 QTC_PLUGIN_DEPENDS += \
-    coreplugin
+    coreplugin \
+    projectexplorer
 
 QTC_PLUGIN_RECOMMENDS += \
     # optional plugin dependencies. nothing here at this time
