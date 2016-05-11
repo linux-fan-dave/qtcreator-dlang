@@ -4,13 +4,19 @@ DEFINES += DUBPROJECT_LIBRARY
 
 SOURCES += dubprojectplugin.cpp \
     d_initializer.cpp \
-    dubprojectmanager.cpp
+    dubprojectmanager.cpp \
+    dubproject.cpp \
+    dubfile.cpp \
+    dubprojectprojectnode.cpp
 
 HEADERS += dubprojectplugin.h \
         dubproject_global.h \
         dubprojectconstants.h \
     d_initializer.h \
-    dubprojectmanager.h
+    dubprojectmanager.h \
+    dubproject.h \
+    dubfile.h \
+    dubprojectprojectnode.h
 
 # Qt Creator linking
 
