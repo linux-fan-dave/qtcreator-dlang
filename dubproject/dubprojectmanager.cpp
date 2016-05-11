@@ -11,7 +11,7 @@ DubProjectManager::DubProjectManager() : ProjectExplorer::IProjectManager()
 
 QString DubProjectManager::mimeType() const
 {
-    return QString("text/x-dub-project");
+    return QString("application/x-dub-project");
 }
 
 ProjectExplorer::Project *DubProjectManager::openProject(const QString &fileName, QString *errorString)

@@ -32,13 +32,13 @@ B* CreateB();
 
 DubProjectPlugin::DubProjectPlugin()
 {
-    static D_Initializer init;
+//    static D_Initializer init;
 
-    B* b = CreateB();
-    int i = b->count();
-    QMessageBox msgBox;
-    msgBox.setText(QString("D returned %1").arg(i));
-    msgBox.exec();
+//    B* b = CreateB();
+//    int i = b->count();
+//    QMessageBox msgBox;
+//    msgBox.setText(QString("D returned %1").arg(i));
+//    msgBox.exec();
 
     // Create your members
 }
