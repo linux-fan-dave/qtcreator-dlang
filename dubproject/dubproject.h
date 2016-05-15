@@ -20,7 +20,7 @@ public:
     QString displayName() const override;
     QStringList files(FilesMode fileMode) const override;
 private:
-    DProjectPtr m_dproject;
+    Internal::DProjectPtr m_dproject;
 };
 
 }

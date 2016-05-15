@@ -3,6 +3,9 @@
 
 #include <QSharedPointer>
 
+namespace DubProject {
+namespace Internal {
+
 class DProject;
 typedef QSharedPointer<DProject> DProjectPtr;
 
@@ -15,4 +18,6 @@ public:
     virtual void reload();
 };
 
+}
+}
 #endif // DPROJECT_H

@@ -1,10 +1,12 @@
 import core.memory;
 import dub.project;
 
-extern (C++) interface DProject {
+extern (C++, DubProject.Internal) {
+
+    interface DProject {
 public:
-    extern (C++) void load();
-    extern (C++) void reload();
+    extern (C++)void load();
+    extern (C++)void reload();
 
 private:
 }
@@ -22,4 +24,5 @@ extern (C++) DProject CreateDProject() {
 
 extern (C++) void ReleaseDProject(void* inst) {
     core.memory.GC.removeRoot(inst);
+}
 }
