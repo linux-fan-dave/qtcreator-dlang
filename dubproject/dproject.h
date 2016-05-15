@@ -11,11 +11,13 @@ typedef QSharedPointer<DProject> DProjectPtr;
 
 class DProject {
 public:
+    typedef void(*ErrorHandler)(bool succeded, const char* errorString);
+
     DProject() = delete;
     static DProjectPtr create();
 
-    virtual void load();
-    virtual void reload();
+    virtual void load(const char* , ErrorHandler);
+    virtual void reload(ErrorHandler);
 };
 
 }
