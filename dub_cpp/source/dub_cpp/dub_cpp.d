@@ -1,19 +1,25 @@
 import core.memory;
-import dub.dub;
+import dub.project;
 
-extern (C++) interface B {
+extern (C++) interface DProject {
 public:
-    extern (C++) int count();
+    extern (C++) void load();
+    extern (C++) void reload();
 
 private:
 }
 
-class D : B {
-    extern (C++)int count() { return 11; }
+class DProjectImpl : DProject {
+    extern (C++)void load () { }
+    extern (C++)void reload() { }
 };
 
-extern (C++) B CreateB() {
-    B inst = new D();
+extern (C++) DProject CreateDProject() {
+    DProject inst = new DProjectImpl();
     core.memory.GC.addRoot(cast(void *)inst);
     return inst;
+}
+
+extern (C++) void ReleaseDProject(void* inst) {
+    core.memory.GC.removeRoot(inst);
 }

@@ -7,7 +7,8 @@ SOURCES += dubprojectplugin.cpp \
     dubprojectmanager.cpp \
     dubproject.cpp \
     dubfile.cpp \
-    dubprojectprojectnode.cpp
+    dubprojectprojectnode.cpp \
+    dproject.cpp
 
 HEADERS += dubprojectplugin.h \
         dubproject_global.h \
@@ -16,7 +17,8 @@ HEADERS += dubprojectplugin.h \
     dubprojectmanager.h \
     dubproject.h \
     dubfile.h \
-    dubprojectprojectnode.h
+    dubprojectprojectnode.h \
+    dproject.h
 
 # Qt Creator linking
 

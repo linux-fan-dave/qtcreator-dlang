@@ -19,7 +19,7 @@ QString DubProject::displayName() const
     return QString("xyz");
 }
 
-QStringList DubProject::files(ProjectExplorer::Project::FilesMode fileMode) const
+QStringList DubProject::files(ProjectExplorer::Project::FilesMode /*fileMode*/) const
 {
     return QStringList();
 }

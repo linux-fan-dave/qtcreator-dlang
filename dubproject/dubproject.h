@@ -3,6 +3,7 @@
 
 
 #include <projectexplorer/project.h>
+#include "dproject.h"
 
 namespace DubProject {
 namespace Internal {
@@ -18,6 +19,8 @@ public:
 public:
     QString displayName() const override;
     QStringList files(FilesMode fileMode) const override;
+private:
+    DProjectPtr m_dproject;
 };
 
 }
