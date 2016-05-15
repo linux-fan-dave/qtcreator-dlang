@@ -6,16 +6,18 @@ extern (C++, DubProject.Internal) {
 
     extern (C++) interface DProject {
     public:
-        alias ErrorHandler=void function(bool succeeded, const char* error_description);
-        extern (C++)void load(const char* path, ErrorHandler eh);
-        extern (C++)void reload();
+        alias ErrorHandler=void function(bool succeeded, void* userData, const char* error_description);
+        extern (C++)void load(const char* path, void* userData, ErrorHandler eh);
+        extern (C++)void reload(void* userData, ErrorHandler eh);
 
     private:
     }
 
     class DProjectImpl : DProject {
-        extern (C++)void load(const char* path, ErrorHandler eh) { eh(true,  toStringz("hallo")); }
-        extern (C++)void reload() { }
+        extern (C++)void load(const char* path, void* userData, ErrorHandler eh) {
+            eh(true, userData, toStringz("hallo"));
+        }
+        extern (C++)void reload(void* userData, ErrorHandler eh) { }
     };
 
     extern (C++) DProject CreateDProject() {

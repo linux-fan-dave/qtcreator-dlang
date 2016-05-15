@@ -26,8 +26,14 @@ ProjectExplorer::Project *DubProjectManager::openProject(const QString &fileName
                 .arg(file.toUserOutput());
         return 0;
     }
+    DubProject* retval = nullptr;
+    try {
+        retval = new DubProject(this, file);
+    } catch (const std::exception& ex) {
+        *errorString = QString::fromUtf8(ex.what());
+    }
 
-    return new DubProject(this, file);
+    return retval;
 }
 
 }

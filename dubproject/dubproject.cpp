@@ -15,9 +15,7 @@ DubProject::DubProject(Internal::DubProjectManager *manager, const Utils::FileNa
     setProjectManager(manager);
     setDocument(new Internal::DubFile(filename));
     setRootProjectNode(new Internal::DubProjectProjectNode(filename));
-    m_dproject->load(filename.parentDir().toString().toUtf8().constData(), [](bool succeded, const char* errorString) {
-        qDebug() << "load succeded" << succeded << "errorString" << errorString;
-    });
+    m_dproject->load(filename.parentDir().toString());
 }
 
 QString DubProject::displayName() const
