@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/dub_cpp
+dub_cpp.so
+dub_cpp.dylib
+dub_cpp.dll
+dub_cpp.a
+dub_cpp.lib
+dub_cpp-test-*
+*.exe
+*.o
+*.obj
+*.lst

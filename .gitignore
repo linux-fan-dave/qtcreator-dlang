@@ -1,0 +1,4 @@
+CMakeLists.txt.user
+dub_cpp/libdub_cpp.a
+dub_cpp/dub_cpp-test-library
+

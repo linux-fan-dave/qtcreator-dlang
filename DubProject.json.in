@@ -1,0 +1,11 @@
+{
+    \"Name\" : \"DubProject\",
+    \"Version\" : \"0.0.1\",
+    \"CompatVersion\" : \"0.0.1\",
+    \"Vendor\" : \"MeinUnternehmen\",
+    \"Copyright\" : \"(C) MeinUnternehmen\",
+    \"License\" : \"Fügen Sie hier kurze Lizenzinformationen ein\",
+    \"Description\" : \"Fügen Sie hier eine kurze Beschreibung Ihres Plugins ein\",
+    \"Url\" : \"https://www.meinunternehmen.com\",
+    $$dependencyList
+}
