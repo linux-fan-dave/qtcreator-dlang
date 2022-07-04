@@ -11,7 +11,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_CXX_STANDARD 17)
 
 find_package(QtCreator REQUIRED COMPONENTS Core)
-find_package(QT NAMES Qt5 REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 REQUIRED COMPONENTS Widgets)
 set(QtX Qt${QT_VERSION_MAJOR})
 
 add_qtc_plugin(DubProject
