@@ -53,8 +53,8 @@ set(DUB_CPP_FILES
 )
 
 set(DUB_CPP_LIB ${CMAKE_CURRENT_SOURCE_DIR}/dub_cpp/${DUB_CPP_TARGET_FILE})
-add_custom_command(OUTPUT ${DUB_CPP_LIB} COMMAND ${DUB} build DEPENDS ${DUB_CPP_FILES} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/dub_cpp)
-add_custom_target(DUB_CPP DEPENDS ${DUB_CPP_LIB})
+add_custom_command(OUTPUT ${DUB_CPP_LIB} COMMAND dub build dub --config library COMMAND ${DUB} build DEPENDS ${DUB_CPP_FILES} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/dub_cpp)
+add_custom_target(DUB_CPP DEPENDS ${DUB_CPP_LIB} COMMENT "Build DUB_CPP")
 
 target_link_libraries(DubProject PUBLIC dub_cpp phobos2 dub)
 target_link_directories(DubProject PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dub_cpp "${DUB_PATH}${DUB_TARGET_PATH}")
