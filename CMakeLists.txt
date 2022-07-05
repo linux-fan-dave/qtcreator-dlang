@@ -59,5 +59,5 @@ add_custom_command(OUTPUT ${DUB_CPP_LIB} COMMAND dub build dub --config library 
 add_custom_target(DUB_CPP DEPENDS ${DUB_CPP_LIB} COMMENT "Build DUB_CPP")
 
 target_link_libraries(DubProject PUBLIC dub_cpp phobos2 dub)
-target_link_directories(DubProject PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dub_cpp "${DUB_PATH}${DUB_TARGET_PATH}" /opt/hostedtoolcache/dc/dmd-2.100.0/x64/dmd2/linux/bin64/../lib64)
+target_link_directories(DubProject PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dub_cpp "${DUB_PATH}${DUB_TARGET_PATH}" ${DMD_PATH})
 add_dependencies(DubProject DUB_CPP)
