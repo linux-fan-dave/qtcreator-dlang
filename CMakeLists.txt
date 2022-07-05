@@ -42,7 +42,10 @@ string(JSON DUB_CPP_TARGET_FILE GET ${PROJECT_DUB_JSON} packages 0 targetFileNam
 string(JSON DUB_PATH GET ${PROJECT_DUB_JSON} packages 1 path)
 string(JSON DUB_TARGET_PATH GET ${PROJECT_DUB_JSON} packages 1 targetPath)
 
-#message("DUB_CPP_TARGET_FILE ${DUB_CPP_TARGET_FILE} ${DUB_PATH} ${DUB_TARGET} ${DUB_TARGET_PATH}")
+message("DUB_CPP_TARGET_FILE ${DUB_CPP_TARGET_FILE} ${DUB_PATH} ${DUB_TARGET_PATH}")
+find_program(LS ls REQUIRED)
+execute_process(COMMAND ${LS} ${DUB_PATH}${DUB_TARGET_PATH} OUTPUT_VARIABLE DUB_LS)
+message("DUB_LS ${DUB_LS}")
 
 set(DUB_CPP_FILES
     dub_cpp/dub.json
