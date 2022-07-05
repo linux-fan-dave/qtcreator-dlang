@@ -10,7 +10,6 @@
 	],
 	"copyright": "Copyright © 2022, David Feurle",
 	"dependencies": {
-		"dlangide": "~>0.8.17",
 		"dub": "~>1.28.0"
 	},
 	"description": "A minimal D application.",
