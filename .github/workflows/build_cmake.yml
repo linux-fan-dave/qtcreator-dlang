@@ -4,7 +4,7 @@ on: [push]
 
 env:
   PLUGIN_NAME: DubProject
-  QT_VERSION: 6.3.1
+  QT_VERSION: 6.2.3
   QT_CREATOR_VERSION: 7.0.1
   QT_CREATOR_SNAPSHOT: NO
   CMAKE_VERSION: 3.18.3
@@ -17,22 +17,22 @@ jobs:
     strategy:
       matrix:
         config:
-        #- {
-        #    name: "Windows Latest MSVC", artifact: "Windows-x64",
-        #    os: windows-latest,
-        #    cc: "cl", cxx: "cl",
-        #    environment_script: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Auxiliary/Build/vcvars64.bat",
-        #  }
+#        - {
+#            name: "Windows Latest MSVC", artifact: "Windows-x64",
+#            os: windows-2019,
+#            cc: "cl", cxx: "cl",
+#            environment_script: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Auxiliary/Build/vcvars64.bat",
+#          }
         - {
             name: "Ubuntu Latest GCC", artifact: "Linux-x64",
             os: ubuntu-latest,
             cc: "gcc", cxx: "g++"
           }
-        #- {
-        #    name: "macOS Latest Clang", artifact: "macOS-x64",
-        #    os: macos-latest,
-        #    cc: "clang", cxx: "clang++"
-        #  }
+#        - {
+#            name: "macOS Latest Clang", artifact: "macOS-x64",
+#            os: macos-latest,
+#            cc: "clang", cxx: "clang++"
+#          }
 
     steps:
     - uses: actions/checkout@v2
@@ -102,101 +102,7 @@ jobs:
       run: |
         set(qt_version "$ENV{QT_VERSION}")
 
-        string(REGEX MATCH "^[0-9]+" qt_version_major "${qt_version}
-        > Guten Morgen Herr Feurle,
-        >
-        >
-        >
-        > ich habe Ihnen in der Anlage noch das Rückgabe-Protokoll der Hyundai Finance beigelegt, welches wir zusätzlich zu dem am 30.06.2022 handschriftlich ausgefüllten Formular noch benötigen.
-        >
-        >
-        >
-        > Bitte unterzeichnen Sie noch das Rückgabe-Protokoll der Hyundai Finance und senden es mir per Mail wieder zurück, damit die Hyundai Finance die Abrechnung des Leasingvertrages machen kann.
-        >
-        >
-        >
-        > Das Fahrzeug können wir dann anschließend auch gleich abmelden.
-        >
-        >
-        >
-        > Für weitere Fragen stehe ich Ihnen gerne zur Verfügung.
-        >
-        > Mit freundlichen Grüßen / Best regards / 감사합니다
-        >
-        > Norbert Schwarzkopf
-        >
-        > Autohaus Meiling GmbH
-        >
-        > Wolf-Hirth-Str.29
-        >
-        > 71034 Böblingen
-        >
-        > IONIQ_5_B2B_E-Mail_Signatur_645x265
-        >
-        >
-        >
-        > Tel +49 7031.224057
-        >
-        > Fax +49 7031.224044
-        >
-        > EMail schwarzkopf@autohausmeiling.de
-        >
-        >
-        >
-        > Geschäftsführer: Holger Meiling
-        >
-        > HRB: 732 632 / Amtsgericht Stuttgart
-        >
-        > Ust.Id.Nr.: DE 269 878 559
-        >
-        > St.-Nr.: 56096/14374
-        >
-        >
-        >
-        > Bankverbindung:
-        >
-        > Vereinigte Volksbank eG
-        >
-        > IBAN: DE75 6039 0000 0427 0360 11
-        >
-        > BIC: GENODES1BBV
-        >
-        >
-        >
-        > Alle Angebote sind Freibleibend. Es gelten unsere AGB’s.
-        >
-        > Gerichtsstand ist Böblingen.
-        >
-        >
-        >
-        > Logo_farbig zugeschnitten   www.autohausmeiling.de
-        >
-        >
-        >
-        > Diese eMail enthält vertrauliche und/oder rechtlich geschützte Informationen. Wenn Sie nicht der richtige Adressat sind oder diese eMail irrtümlich erhalten haben, informieren Sie bitte sofort den Absender und vernichten Sie diese eMail. Das unerlaubte Kopieren sowie die unbefugte Weitergabe dieser eMail ist nicht gestattet.
-        >
-        > This email may contain confidential and/or privileged information. If you are not the intended recipient (or have received this email in error) please notify the sender immediately and destroy this email. Any unauthorized copying, disclosure or distribution of the material in thies email is strictly forbidden.
-        >
-        >
-        >
-        >
-        >
-        >
-        >
-        > Von: David Feurle <david@firehome.de>
-        > Gesendet: Donnerstag, 30. Juni 2022 11:40
-        > An: schwarzkopf@autohausmeiling.de
-        > Betreff: Geplante Ankunftszeit
-        >
-        >
-        >
-        > Hallo Herr Schwarzkopf,
-        >
-        > ich komme voraussichtlich um 13 Uhr an.
-        >
-        > Mit freundlichen Grüssen,
-        >
-        > David feurle ")
+        string(REGEX MATCH "^[0-9]+" qt_version_major "${qt_version}")
         string(REPLACE "." "" qt_version_dotless "${qt_version}")
         if ("${{ runner.os }}" STREQUAL "Windows")
           set(url_os "windows_x86")
