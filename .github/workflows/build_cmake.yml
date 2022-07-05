@@ -9,8 +9,6 @@ env:
   QT_CREATOR_SNAPSHOT: NO
   CMAKE_VERSION: 3.21.1
   NINJA_VERSION: 1.10.2
-  DMD_VERSION: 2.100.0
-  DMD_YEAR: 2022
 
 jobs:
   build:
@@ -28,7 +26,6 @@ jobs:
         - {
             name: "Ubuntu Latest GCC", artifact: "Linux-x64",
             os: ubuntu-latest,
-            https://s3.us-west-2.amazonaws.com/downloads.dlang.org/releases/2022/dmd.2.100.0.linux.tar.xz
             cc: "gcc", cxx: "g++"
           }
 #        - {
