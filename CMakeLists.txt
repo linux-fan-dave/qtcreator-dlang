@@ -44,9 +44,11 @@ string(JSON DUB_TARGET_PATH GET ${PROJECT_DUB_JSON} packages 1 targetPath)
 
 message("DUB_CPP_TARGET_FILE ${DUB_CPP_TARGET_FILE} ${DUB_PATH} ${DUB_TARGET_PATH}")
 find_program(DMD dmd REQUIRED)
-execute_process(COMMAND ${DMD} test -v OUTPUT_VARIABLE DUB_VERBOSE)
-message("DUB_VERBOSE ${DUB_VERBOSE}")
+execute_process(COMMAND ${DMD} test -v OUTPUT_VARIABLE DMD_VERBOSE ERROR_VARIABLE DMD_ERR)
+string(REGEX REPLACE ".*-L-L([.a-zA-Z0-9/_\-]*).*" "\\1" DMD_PATH ${DMD_VERBOSE})
+message("DMD_PATH ${DMD_PATH}")
 
+#
 set(DUB_CPP_FILES
     dub_cpp/dub.json
     dub_cpp/source/DProject.d
